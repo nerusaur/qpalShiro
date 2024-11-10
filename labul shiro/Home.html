@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Diary</title>
+  <link rel="stylesheet" href="Home.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <header class="header">
+        <h1>My Diary</h1>
+        <div class="header-controls">
+          <select id="theme-select" onchange="changeTheme()">
+            <option value="light">Light Theme</option>
+            <option value="dark">Dark Theme</option>
+            <option value="neutral">Neutral Theme</option>
+            <option value="pastel">Pastel Theme</option>
+          </select>
+          <a href="Index.html"><button class="LogOut">Log Out</button></a>
+        </div>
+      </header>
+  
+      <main class="content">
+        <section class="intro">
+         
+            
+            <div >
+              <br><br><br><br><br><br><br><br>
+              <h2>Welcome to Your Personal Diary</h2>
+              <br>
+              <h3>Capture your thoughts, dreams, and daily memories. Reflect,write, and revisit your journey anytime.</h3>
+              
+            </span><hr><br> <a href="#section-new"><button class="btn-start">Start Writing</button></a>
+            </div></div>
+               
+          
+     
+      <br>
+
+        </div>
+        </section>
+        
+        <hr>
+        <section id="section-new" class="section-new">
+          
+          <div class="container">
+            <h1>New Entry</h1>
+            
+            <br>
+            
+            <form autocomplete="off" id="entryForm" action="">
+              <label class="title">Title Of The Entry
+                <select id="mood-selector" class="mood-dropdown">
+                  <option value="" disabled selected>Select Mood</option>
+                  <option value="Happy">Happy 😊</option>
+                  <option value="Relaxed">Relaxed 😌</option>
+                  <option value="Focused">Focused 🎯</option>
+                  <option value="Excited">Excited 😄</option>
+                  <option value="Calm">Calm 🌊</option>
+                </select>
+              </label>
+              <input
+                type="text"
+                name="entry-title"
+                id="entry-title"
+                class="entry-title"
+                placeholder="Title 🖊️"
+              />
+      
+              <label class="title">Description</label>
+              <textarea
+                name="daily-entry"
+                id="entry"
+                class="entry-box"
+                placeholder="Dear Diary ...🖊️"
+              ></textarea>
+              <button type="submit" id="submit">Add To Diary</button>
+            </form>
+          </div>
+        </section>
+        <section class="section-old" id="entryResultsSection">
+          <h1>Previous Entries</h1>
+          <div class="container">
+            <div class="history"></div>
+          </div>
+         
+      </main>
+ 
+
+  
+  
+  <script src="index.js"></script>
+  
+</body>
+</html>

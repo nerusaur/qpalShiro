@@ -1,0 +1,390 @@
+:root {
+    --bg-color: hsl(0, 0%, 100%);      /* Pure white background */
+    --text-color: hsl(0, 0%, 15%);      /* Dark gray text for contrast */
+    --button-bg: hsl(0, 0%, 90%);       /* Light gray button */
+    --button-text: hsl(0, 0%, 20%);     /* Darker gray text for buttons */
+    --scrollbar-bg: hsl(0, 0%, 85%);    /* Very light gray scrollbar */
+    --scrollbar-thumb: hsl(0, 0%, 60%); /* Gray thumb for visibility */
+    --button-LogOut: hsl(0, 0%, 90%);   /* Matching log-out button */
+    --text-black: hsl(0, 0%, 0%);   /* text-black */
+}
+.light-theme {
+    --bg-color: hsl(0, 0%, 100%);      /* Pure white background */
+    --text-color: hsl(0, 0%, 15%);      /* Dark gray text for contrast */
+    --button-bg: hsl(0, 9%, 75%);       /* Light gray button */
+    --button-text: hsl(0, 0%, 20%);     /* Darker gray text for buttons */
+    --scrollbar-bg: hsl(0, 0%, 85%);    /* Very light gray scrollbar */
+    --scrollbar-thumb: hsl(0, 0%, 60%); /* Gray thumb for visibility */
+    --button-LogOut: hsl(0, 0%, 90%);   /* Matching log-out button */
+    --bg-color-h1: hsl(0, 0%, 15%);
+    --bg-box: hsl(0, 0%, 87%);
+    --text-black: hsl(0, 0%, 0%);   /* text-black */
+}
+
+.pastel-theme {
+   --bg-color: hsla(340, 70%, 90%, 0.9);       /* Light pink background */
+  --text-color: hsl(320, 50%, 40%);           /* Soft mauve text */
+  --button-bg: hsl(340, 80%, 85%);            /* Pastel pink button background */
+  --button-text: hsl(330, 20%, 98%);          /* Very light pink button text */
+  --button-log-out: hsla(340, 65%, 80%, 0.9); /* Light rose log-out button */
+  --bg-color-h1:  hsl(320, 50%, 40%);         /* Lilac header background */
+  --bg-box: hsl(340, 100%, 95%);              /* Pale blush box background */
+  --text-black: hsl(320, 15%, 20%);           /* Dark plum text */
+}
+.dark-theme {
+  --bg-color: hsl(210, 15%, 10%);            /* Deep charcoal background */
+  --text-color: hsl(0, 0%, 85%);             /* Soft white text */
+  --button-bg: hsl(220, 30%, 25%);           /* Cool dark blue button background */
+  --button-text: hsl(0, 0%, 98%);            /* Off-white button text */
+  --button-log-out: hsl(210, 15%, 15%);      /* Slightly lighter charcoal for log-out button */
+  --bg-color-h1: hsl(0, 0%, 95%);            /* Near-white header background */
+  --bg-box: hsl(240, 5%, 35%);               /* Muted slate gray box background */
+}
+.neutral-theme {
+    --bg-color: hsl(45, 20%, 70%);
+    --text-color: hsl(0, 0%, 20%);
+    --button-bg: hsl(0, 0%, 40%);
+    --button-text: hsl(0, 0%, 95%);
+    --button-LogOut: hsl(45, 20%, 70%);
+    --bg-color-h1: hsl(0, 0%, 100%);
+    --bg-box: hsl(60, 7%, 52%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space Mono', monospace;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+
+    font-family: 'Space Mono', monospace;
+    line-height: 1.6;
+    color: var(--text-color);
+    max-width: 100%;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    background-color: var(--bg-color);
+}
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    background: var(--button-bg);
+    animation: slideFromTop 1s ease-out;
+}
+
+h1 {
+    font-size: 1.5rem;
+    color: var(--bg-color-h1);
+    animation: slideFromLeft 1s ease-out;
+}
+
+
+#theme-select {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.content {
+    padding: 2rem;
+    text-align: center;
+    animation: slideFromBottom 1.2s ease-out;
+}
+.content section {
+  height: 100vh; /* Full viewport height on desktops */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* .image-container {
+  background-image: url('img/gabrielle-henderson-Y3OrAn230bs-unsplash-removebg-preview.png'); 
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 900%;
+  max-width: 2000%; 
+  height: 600px; 
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+   animation: slideFromRight 1.2s ease-out;
+} */
+
+.image-container {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* background-color: #fff; */
+}
+
+.responsive-image {
+  width: 100%; /* Image will scale to fit the container */
+  height: auto; /* Maintain aspect ratio */
+}
+.intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.image-container,
+.text-container {
+  width: 100%;
+  padding: 20px;
+  min-width: 300px;
+  background-color: var(--bg-box);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  animation: slideFromLeft 1.4s ease-out;
+}
+
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation: slideFromLeft 1.4s ease-out;
+}
+
+.text-container h2 {
+  font-size: 2rem;
+  color: var(--bg-color-h1);
+  margin-bottom: 1rem;
+  
+}
+
+.text-container p {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+}
+.btn-start, .LogOut, #submit {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  animation: slideFromLeft 1.4s ease-out;
+}
+
+.btn-start:hover, .LogOut:hover {
+    opacity: 0.9;
+    scale: 1.1;
+}
+
+/* Custom Scrollbar */
+body::-webkit-scrollbar {
+    width: 12px;
+    background-color: var(--scrollbar-bg);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb);
+    border-radius: 6px;
+}
+html {
+    scroll-behavior: smooth;
+  
+  
+  }
+  button {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+  }
+  .section-new {
+    padding: 1em;
+    width: 90%;
+    margin: 1em auto;
+    color: var(--button-text);
+  }
+  
+  .section-old,
+  .container {
+    width: 100%;
+    margin: 0 auto;
+    color: var(--button-text);
+  }
+  
+  ::-webkit-scrollbar {
+    background: var(--scrollbar-bg);
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 100px;
+  }
+  
+  .title {
+    display: block;
+    line-height: 1.6;
+    font-size: 1.5rem;
+    font-weight: 900;
+  }
+  
+  .entry-title,
+  .entry-box {
+    width: 90%;
+    margin: 1em auto;
+    padding: 1em;
+    border-radius: 5px;
+    background-color: var(--bg-box);
+    font-family: 'Space Mono', monospace;
+    font-size: 1rem;
+    color: var(--bg-color-h1);
+  }
+
+.btn-toggle-entries {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn-toggle-entries:hover {
+  opacity: 0.9;
+  transform: scale(1.05) ;
+ 
+}
+
+
+
+
+  /* Mood Dropdown */
+  .mood-dropdown {
+    padding: 0.5em;
+    font-size: 1rem;
+    font-family: 'Space Mono', monospace;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+ 
+  
+  .mood-dropdown:focus {
+    outline: none;
+  }
+  
+  /* Display Selected Mood */
+  .mood-display {
+    margin-top: 1em;
+    font-size: 1.2rem;
+    color: var(--text-color);
+  }
+  
+  .entry-box {
+    height: 15em;
+    font-size: 1.1rem;
+    
+  }
+  
+  .history {
+   color: var(--button-bg);
+    display: flex;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    border: unset;
+    overflow-y: scroll;
+  }
+  
+  .single-entry-div {
+    
+    max-width: 100%;
+    padding: 1em;
+  }
+  
+  .single-entry-heading {
+    font-size: 1.5rem;
+    font-weight: 900;
+  }
+  
+  .single-entry-date {
+    background-color: var(--bg-box);
+    color:var(--text-black);
+    padding: 0.5em;
+    border-radius: 5px;
+    font-weight: 700;
+  }
+  
+  .single-entry-text {
+    color:var(--text-black);
+    width: 90%;
+    height: 10em;
+    margin: 1em auto;
+    padding: 1em;
+    border-radius: 5px;
+    background-color: var(--bg-box);
+    overflow-y: auto;
+  }
+  #submit{
+    background-color: var(--button-bg);
+    color: var(--button-text);
+  }
+ 
+  
+
+ /* text animation for home page */
+/* Slide-in animations */
+@keyframes slideFromTop {
+  0% { transform: translateY(-100vh); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideFromBottom {
+  0% { transform: translateY(300vh); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideFromLeft {
+  0% { transform: translateX(-100vw); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideFromRight {
+  0% { transform: translateX(100vw); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
